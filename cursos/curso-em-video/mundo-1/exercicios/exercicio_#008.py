@@ -3,9 +3,10 @@
 print("Conversor de Metros!")
 
 metros = float(input("Digite a metragem que deseja converter: "))
-centimetros = metros * 100
-milimetros = metros * 1000
+
+CENTIMETROS = metros * 100
+MILIMETROS = metros * 1000
 
 print(f"{metros:.0f} metro(s) em:")
-print(f"Centímetros: {centimetros:.0f}cm")
-print(f"Milímetros: {milimetros:.0f}mm")
+print(f"Centímetros: {CENTIMETROS:.0f}cm")
+print(f"Milímetros: {CENTIMETROS:.0f}mm")

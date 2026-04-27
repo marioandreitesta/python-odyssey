@@ -1,3 +1,4 @@
 # Pastas ignoradas
 cursos/livros/
 research/
+__pycache__/

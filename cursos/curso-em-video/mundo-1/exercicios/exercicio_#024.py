@@ -9,5 +9,5 @@ nome_cidade = nome_cidade.upper()
 if nome_cidade.startswith('SANTO'):
     print(f'{CINZA_BOLD}O nome da cidade digitado começa com "{VERDE_BOLD}Santo"')
 else:
-    print(f'{CINZA_BOLD}O nome da sua cidade não começa com "{VERMELHO_BOLD}Santo"')
+    print(f'{CINZA_BOLD}O nome da sua cidade não começa com "{VERMELHO_BOLD}Santo{LIMPAR}"')
 

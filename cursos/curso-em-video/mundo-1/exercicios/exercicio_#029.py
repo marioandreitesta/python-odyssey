@@ -16,3 +16,5 @@ print('-' * DIV)
 if VELOCIDADE_CARRO > LIMITE_RADAR:
     print(f'Você ultrapassou o limite de velocidade! [{VELOCIDADE_CARRO}Km/h]')
     print(f'Multa: R${VALOR_MULTA:.2f}')
+else:
+    print('Tenha uma boa viagem!')

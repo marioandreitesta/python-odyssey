@@ -1,0 +1,67 @@
+[tool.zuban]
+# Modo estrito — exige tipagem explicita em tudo
+strict = true
+# Exige type hints em todos os parametros de funcoes
+disallow_untyped_defs = true
+# Avisa quando codigo e detectado como inalcancavel
+warn_unreachable = true
+# Exige type hints em variaveis globais
+allow_untyped_globals = false
+# Verifica funcoes sem type hints mesmo que incompletas
+check_untyped_defs = true
+# Segue imports de bibliotecas sem stubs de tipo (datetime, colorama, etc)
+follow_untyped_imports = true
+# Ignora arquivos listados no .gitignore automaticamente
+exclude_gitignore = true
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "mundo-1",  # exercicios concluidos — sem ruido
+]
+
+[tool.ruff.lint]
+select = [
+    "E",     # pycodestyle — erros de estilo (espacos, indentacao)
+    "W",     # pycodestyle — avisos de estilo
+    "F",     # Pyflakes — variaveis/imports nao usados, erros logicos
+    "I",     # isort — ordenacao de imports
+    "N",     # pep8-naming — snake_case, UPPER_CASE, etc
+    "UP",    # pyupgrade — sugere sintaxe moderna do Python 3.12
+    "B",     # flake8-bugbear — bugs comuns e design ruim
+    "SIM",   # flake8-simplify — simplificacoes de if/else desnecessario
+    "C4",    # flake8-comprehensions — uso correto de list/dict comprehensions
+    "PERF",  # perflint — loops ineficientes e problemas de performance
+    "RET",   # flake8-return — boas praticas de return
+    "PTH",   # flake8-use-pathlib — pathlib em vez de os.path
+    "RUF",   # Ruff-specific — regras proprias do Ruff
+    "PL",    # Pylint — subconjunto das regras do Pylint
+    "FURB",  # refurb — padroes Python mais idiomaticos
+    "ARG",   # flake8-unused-arguments — parametros declarados e nao usados
+    "TCH",   # flake8-type-checking — imports usados so em type hints
+    "SLF",   # flake8-self — uso incorreto de self/cls
+    "RSE",   # flake8-raise — boas praticas em raise de excecoes
+]
+
+ignore = [
+    "T201",  # flake8-print — avisa sobre print() para aprendizado
+    "E501",    # linha muito longa — o formatter ja cuida disso
+    "B008",    # chamada de funcao em argumento padrao — falso positivo comum
+    "PLR0913", # muitos argumentos em funcao — desnecessario para estudos
+    "UP007",   # use X | Y em vez de Optional — compatibilidade Python 3.9
+]
+
+fixable = ["ALL"]
+
+[tool.ruff.lint.per-file-ignores]
+"mundo-1/*" = ["ALL"]          # mundo-1 concluido — silenciado completamente
+"*/anotacoes/*" = ["T201", "E402"]  # anotacoes — menos restrito
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
